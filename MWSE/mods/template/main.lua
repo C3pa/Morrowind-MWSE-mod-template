@@ -5,13 +5,14 @@ local logger = require("logging.logger")
 local util = require("template.util")
 -- We directly index into the "config" table in the configlib module.
 local config = require("template.config").config
-dofile("template.mcm")
-
 
 local log = logger.new({
 	name = "Template",
 	logLevel = config.logLevel,
 })
+
+dofile("template.interop.mods")
+dofile("template.mcm")
 
 
 ---@param e keyDownEventData|mouseButtonDownEventData|mouseWheelEventData

@@ -5,13 +5,14 @@ local logger = require("logging.logger")
 local util = require("templateLocalized.util")
 -- We directly index into the "config" table in the configlib module.
 local config = require("templateLocalized.config").config
-dofile("templateLocalized.mcm")
-
 
 local log = logger.new({
 	name = "Localized Template",
 	logLevel = config.logLevel,
 })
+
+dofile("templateLocalized.interop.mods")
+dofile("templateLocalized.mcm")
 
 
 ---@param e keyDownEventData|mouseButtonDownEventData|mouseWheelEventData
