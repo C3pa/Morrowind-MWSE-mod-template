@@ -1,0 +1,16 @@
+[package]
+name = "Template Mod"
+description = "A template for creating mods with MWSE."
+# homepage = "https://www.nexusmods.com/morrowind/mods/55193"
+repository = "https://github.com/C3pa/Morrowind-MWSE-mod-template"
+authors = [ "C3pa" ]
+version = "1.0.0"
+
+[dependencies.mwse]
+buildnumber = 3520
+
+[dependencies.mge-xe]
+version = ">=0.18.0"
+
+[tools.mwse]
+lua-mod = "Template"
