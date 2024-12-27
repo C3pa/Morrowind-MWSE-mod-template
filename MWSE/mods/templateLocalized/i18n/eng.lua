@@ -11,7 +11,6 @@ return {
 	-- Put all the mcm strings here.
 	["mcm"] = {
 		-- General strings.
-		["default"] = "Default",
 		["settings"] = "Settings",
 
 		-- The default sidebar text. Shown when NO button, slider, etc. is hovered over.
