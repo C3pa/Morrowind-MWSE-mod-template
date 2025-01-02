@@ -7,7 +7,7 @@ local mcmConfig = configlib.getConfig()
 local authors = {
 	{
 		name = "C3pa",
-		url = "https://www.nexusmods.com/morrowind/users/37172285?tab=user+files",
+		url = "https://next.nexusmods.com/profile/C3pa/mods",
 	},
 	{
 		name = "Some other author",
