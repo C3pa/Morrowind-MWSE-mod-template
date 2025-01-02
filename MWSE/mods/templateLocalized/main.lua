@@ -2,7 +2,6 @@
 local inspect = require("inspect")
 local logger = require("logging.logger")
 
-local util = require("templateLocalized.util")
 -- We directly index into the "config" table in the configlib module.
 local config = require("templateLocalized.config").config
 
@@ -11,6 +10,7 @@ local log = logger.new({
 	logLevel = config.logLevel,
 })
 
+local util = require("templateLocalized.util")
 dofile("templateLocalized.interop.mods")
 dofile("templateLocalized.mcm")
 
