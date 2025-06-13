@@ -1,6 +1,6 @@
-local configFile = "Template"
+local fileName = "Template"
 
----@class template.configTable
+---@class template.defaultConfig
 local default = {
 	logLevel = mwse.logLevel.info,
 	asetting = 300,
@@ -13,32 +13,14 @@ local default = {
 	},
 }
 
-local cachedConfig = mwse.loadConfig(configFile, default)
-local this = {
-	version = "0.1.0",
-	---@type template.configTable
-	config = {},
-	default = default,
-}
+---@class template.config : template.defaultConfig
+---@field version string A [semantic version](https://semver.org/).
+---@field default template.defaultConfig Access to the default config can be useful in the MCM.
+---@field fileName string
 
--- We use a trick of empty "config" table with a __index in its metatable. This way we make sure
--- that all the other files that read from "config" table read our up-to-date cachedConfig.
--- This approach was pioneered by Merlord.
-setmetatable(this.config, { __index = cachedConfig })
+local config = mwse.loadConfig(fileName, default) --[[@as template.config]]
+config.version = "0.1.0"
+config.default = default
+config.fileName = fileName
 
---- Returns a copy of the current config table.
---- Usually used in mcm\init.lua
----@return template.configTable
-this.getConfig = function()
-	return table.copy(cachedConfig)
-end
-
---- Saves the config table to mod's config file.
---- Usually used in mcm\init.lua
---- @param mcmConfig template.configTable
-this.saveConfig = function(mcmConfig)
-	table.copy(mcmConfig, cachedConfig)
-	mwse.saveConfig(configFile, cachedConfig)
-end
-
-return this
+return config

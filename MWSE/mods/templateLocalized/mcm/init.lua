@@ -1,8 +1,7 @@
-local configlib = require("templateLocalized.config")
+local config = require("templateLocalized.config")
 local log = mwse.Logger.new()
 
 local i18n = mwse.loadTranslations("templateLocalized")
-local mcmConfig = configlib.getConfig()
 
 local authors = {
 	{
@@ -41,14 +40,12 @@ local function registerModConfig()
 	local template = mwse.mcm.createTemplate({
 		name = i18n("Localized Template Mod"),
 		headerImagePath = "MWSE/mods/templateLocalized/mcm/Header.tga",
-		onClose = function()
-			configlib.saveConfig(mcmConfig)
-		end,
-		config = mcmConfig,
-		defaultConfig = configlib.default,
+		config = config,
+		defaultConfig = config.default,
 		showDefaultSetting = true,
 	})
 	template:register()
+	template:saveOnClose(config.fileName, config)
 
 	local page = template:createSideBarPage({
 		label = i18n("mcm.settings"),

@@ -1,7 +1,6 @@
 local log = mwse.Logger.new()
 
--- We directly index into the "config" table in the configlib module.
-local config = require("templateLocalized.config").config
+local config = require("templateLocalized.config")
 
 
 local util = {}

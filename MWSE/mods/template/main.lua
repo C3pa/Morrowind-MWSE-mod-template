@@ -1,5 +1,4 @@
--- We directly index into the "config" table in the configlib module.
-local config = require("template.config").config
+local config = require("template.config")
 
 local log = mwse.Logger.new({
 	name = "Template",
