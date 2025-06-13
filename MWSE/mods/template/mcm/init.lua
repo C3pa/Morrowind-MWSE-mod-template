@@ -25,9 +25,7 @@ end
 --- @param container mwseMCMSideBarPage
 local function createSidebar(container)
 	container.sidebar:createInfo({
-		text = (
-			"\nWelcome to Template Mod!\n\nHover over a feature for more info.\n\nMade by:"
-		),
+		text = "\nWelcome to Template Mod!\n\nHover over a feature for more info.\n\nMade by:",
 		postCreate = center,
 	})
 	for _, author in ipairs(authors) do
