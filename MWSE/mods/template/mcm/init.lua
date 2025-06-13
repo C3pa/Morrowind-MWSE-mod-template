@@ -1,5 +1,5 @@
 local configlib = require("template.config")
-local log = require("logging.logger").getLogger("template") --[[@as mwseLogger]]
+local log = mwse.Logger.new()
 
 
 local mcmConfig = configlib.getConfig()
@@ -80,23 +80,8 @@ local function registerModConfig()
 		end
 	})
 
-	page:createDropdown({
-		label = "Logging Level",
-		description = "Set the log level. If you've found a bug in the mod, please backup \z
-			your MWSE.log, set the logging level to Trace, and replicate the bug. When \z
-			reporting the bug please attach both MWSE.log files.",
-		options = {
-			{ label = "Trace", value = "TRACE" },
-			{ label = "Debug", value = "DEBUG" },
-			{ label = "Info",  value = "INFO" },
-			{ label = "Warn",  value = "WARN" },
-			{ label = "Error", value = "ERROR" },
-			{ label = "None",  value = "NONE" },
-		},
+	page:createLogLevelOptions({
 		configKey = "logLevel",
-		callback = function(self)
-			log:setLogLevel(self.variable.value)
-		end
 	})
 end
 

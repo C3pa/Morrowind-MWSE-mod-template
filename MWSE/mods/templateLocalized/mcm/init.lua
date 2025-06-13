@@ -1,6 +1,5 @@
 local configlib = require("templateLocalized.config")
-local log = require("logging.logger").getLogger("templateLocalized") --[[@as mwseLogger]]
-
+local log = mwse.Logger.new()
 
 local i18n = mwse.loadTranslations("templateLocalized")
 local mcmConfig = configlib.getConfig()
@@ -79,21 +78,8 @@ local function registerModConfig()
 		end
 	})
 
-	page:createDropdown({
-		label = i18n("mcm.logLevel.label"),
-		description = i18n("mcm.logLevel.description"),
-		options = {
-			{ label = "Trace", value = "TRACE" },
-			{ label = "Debug", value = "DEBUG" },
-			{ label = "Info",  value = "INFO" },
-			{ label = "Warn",  value = "WARN" },
-			{ label = "Error", value = "ERROR" },
-			{ label = "None",  value = "NONE" },
-		},
-		configKey = "logLevel",
-		callback = function(self)
-			log:setLogLevel(self.variable.value)
-		end
+	page:createLogLevelOptions({
+		configKey = "logLevel"
 	})
 end
 

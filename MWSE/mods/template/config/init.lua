@@ -2,8 +2,7 @@ local configFile = "Template"
 
 ---@class template.configTable
 local default = {
-	---@type mwseLoggerLogLevel
-	logLevel = "INFO",
+	logLevel = mwse.logLevel.info,
 	asetting = 300,
 	---@type mwseKeyMouseCombo
 	someKey = {

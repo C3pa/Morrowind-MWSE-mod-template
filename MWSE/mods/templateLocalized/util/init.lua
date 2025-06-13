@@ -1,4 +1,4 @@
-local log = require("logging.logger").getLogger("templateLocalized") --[[@as mwseLogger]]
+local log = mwse.Logger.new()
 
 -- We directly index into the "config" table in the configlib module.
 local config = require("templateLocalized.config").config

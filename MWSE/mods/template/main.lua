@@ -1,13 +1,9 @@
--- Inspect is useful to print-debug any kind of table.
-local inspect = require("inspect")
-local logger = require("logging.logger")
-
 -- We directly index into the "config" table in the configlib module.
 local config = require("template.config").config
 
-local log = logger.new({
+local log = mwse.Logger.new({
 	name = "Template",
-	logLevel = config.logLevel,
+	level = config.logLevel,
 })
 
 local util = require("template.util")
