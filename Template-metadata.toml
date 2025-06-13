@@ -7,7 +7,7 @@ authors = [ "C3pa" ]
 version = "1.0.0"
 
 [dependencies.mwse]
-buildnumber = 3520
+buildnumber = 4502
 
 [dependencies.mge-xe]
 version = ">=0.18.0"
