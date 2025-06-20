@@ -1,0 +1,1 @@
+This folder is used to store interoperability files for other mods. Simply add a folder with the mod name and create a file named `main.lua`. See .\RightClickMenuExit\main.lua.

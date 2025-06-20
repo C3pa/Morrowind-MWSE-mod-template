@@ -6,7 +6,6 @@ local log = mwse.Logger.new({
 })
 
 local util = require("templateLocalized.util")
-dofile("templateLocalized.interop.mods")
 dofile("templateLocalized.mcm")
 
 
