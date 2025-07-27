@@ -1,6 +1,9 @@
 local fileName = "Template"
 
----@class template.defaultConfig
+---@class template.config
+---@field version string A [semantic version](https://semver.org/).
+---@field default template.config Access to the default config can be useful in the MCM.
+---@field fileName string
 local default = {
 	logLevel = mwse.logLevel.info,
 	asetting = 300,
@@ -13,12 +16,7 @@ local default = {
 	},
 }
 
----@class template.config : template.defaultConfig
----@field version string A [semantic version](https://semver.org/).
----@field default template.defaultConfig Access to the default config can be useful in the MCM.
----@field fileName string
-
-local config = mwse.loadConfig(fileName, default) --[[@as template.config]]
+local config = mwse.loadConfig(fileName, default)
 config.version = "0.1.0"
 config.default = default
 config.fileName = fileName
