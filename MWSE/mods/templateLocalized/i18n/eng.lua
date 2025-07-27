@@ -25,9 +25,5 @@ return {
 			["label"] = "Some action key combination.",
 			["description"] = "This key combination will trigger ...",
 		},
-		["logLevel"] = {
-			["label"] = "Logging Level",
-			["description"] = "Set the log level. If you've found a bug in the mod, please backup your MWSE.log, set the logging level to Trace, and replicate the bug. When reporting the bug please attach both MWSE.log files.",
-		},
 	},
 }
