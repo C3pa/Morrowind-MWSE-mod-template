@@ -1,5 +1,5 @@
 local templateLocalized = {}
 
-templateLocalized.interop = require("templateLocalized.interop")
+templateLocalized = require("templateLocalized.interop")
 
 return templateLocalized

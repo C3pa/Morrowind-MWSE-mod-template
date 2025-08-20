@@ -1,5 +1,5 @@
 local template = {}
 
-template.interop = require("template.interop")
+template = require("template.interop")
 
 return template
